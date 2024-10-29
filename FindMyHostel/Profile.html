@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FindMyHostel</title>
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <link href="style/Profile.css" rel="stylesheet">
+        <style>
+            *{
+                font-family: 'Poppins', sans-serif;
+            }
+            body{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f5f5f5;
+                margin:0;
+            }
+        </style>
+    </head>
+    <body>
+    
+<div class="container">
+    <div class="picture">
+        <div class="profile">Profile
+        <div class="pic-placeholder" id="pic-placeholder"><span>No Image</span></div>
+        <input type="file" hidden id="file-input">
+
+        <button class="change" id="change-btn">Change Picture</button>
+        <button class="delete" id="delete-btn">Delete Picture</button><br><br>
+    </div>
+    
+<form class="form" action="#" method="POST">
+    <label id="pname" for="name">Name :</label><br>
+    <input type="text" id="name"><br>
+    <label id="e-address" for="address">Email Address :</label><br>
+    <input type="email" id="address"><br>
+    <label id="paswed" for="password">Change Password : </label><br>
+    <input type="password" id="password" min="8" max="12"><br><br>
+<div class="button">
+    <button class="save" type="submit" >Save</button>
+<button class="clear" type="reset">Clear</button>
+</div>
+</form>
+    
+    
+
+
+    
+ </div> 
+ <script>
+    // Get the HTML elements we need to work with
+const fileInput = document.getElementById('file-input'); 
+const changeBtn = document.getElementById('change-btn'); 
+const deleteBtn = document.getElementById('delete-btn'); 
+const picPlaceholder = document.getElementById('pic-placeholder'); 
+
+// When the change button is clicked
+changeBtn.addEventListener('click', function() {
+    fileInput.click(); // Open the file dialog to select an image
+});
+
+// When the user selects a file
+fileInput.addEventListener('change', function() {
+    const file = fileInput.files[0]; // Get the first file selected
+    if (file) {
+        const reader = new FileReader(); // Create a FileReader to read the file
+        reader.onload = function(event) {
+            // When the file is loaded, display the image
+            picPlaceholder.innerHTML = `<img src="${event.target.result}" alt="Profile Picture">`;
+        };
+        reader.readAsDataURL(file); // Read the file as a Data URL
+    }
+});
+
+// When the delete button is clicked
+deleteBtn.addEventListener('click', function() {
+    fileInput.value = ''; // Clear the file input
+    picPlaceholder.innerHTML = '<span>No Image</span>'; // Show a message indicating no image
+});
+
+
+    
+</script>
+
+    </body>
+
+</html>
