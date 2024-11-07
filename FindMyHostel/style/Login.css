@@ -1,0 +1,91 @@
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* main div */
+.container {
+    display: flex;
+    flex-wrap: warap;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 600px;
+    height: 380px;
+}
+
+
+
+
+
+/* login form */
+.login-form {
+    padding: 20px;
+    background-color: white;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.login-form h2{
+    color: #030f36;
+    transform: translateY(20px);   
+}
+
+ /* text boxes */
+.login-form input {
+    width: 260px;
+    margin-left:10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(20px);   
+}
+
+/* Login button */
+.login-form button {
+    background-color: #65B579;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 280px;
+    position: relative;
+    bottom: 15px;
+    transform: translateX(10px);
+}
+
+.login-form button:hover {
+    border: 2px solid #65B579; 
+    background-color:rgba(0, 0, 0, 0.0);
+    color: #65B579;
+}
+
+.login-form a {
+    color: #65B579;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+/* create acc */
+.login-form p{
+    text-decoration: none;
+    margin-top: 30px;
+    text-align: center;
+}
